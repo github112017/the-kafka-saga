@@ -44,22 +44,6 @@ public class TraditionalConsumer {
             }
         }
 
-        public class ConsumerThread implements Runnable {
-            private CountDownLatch latch;
-            public ConsumerThread(CountDownLatch latch)
-            {
-                this.latch = latch;
-            }
-            @Override
-            public void run()
-            {
-
-            }
-            public void shutdown()
-            {
-
-            }
-        }
 
     }
 }
