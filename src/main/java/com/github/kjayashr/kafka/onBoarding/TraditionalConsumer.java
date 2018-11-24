@@ -15,6 +15,7 @@ import java.lang.reflect.Constructor;
 import java.time.Duration;
 import java.util.Arrays;
 import java.util.Properties;
+import java.util.concurrent.CountDownLatch;
 
 public class TraditionalConsumer {
     public static void main(String[] args) {
@@ -42,5 +43,7 @@ public class TraditionalConsumer {
                 logger.info("Partition: "+ record.partition() +"Offset: "+record.offset());
             }
         }
+
+
     }
 }
