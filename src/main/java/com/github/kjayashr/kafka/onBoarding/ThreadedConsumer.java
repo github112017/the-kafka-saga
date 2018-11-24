@@ -1,25 +1,21 @@
 package com.github.kjayashr.kafka.onBoarding;
 
-import org.apache.kafka.clients.admin.ConsumerGroupDescription;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.apache.kafka.clients.consumer.ConsumerRecords;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
-import org.apache.kafka.common.protocol.types.Field;
 import org.apache.kafka.common.serialization.StringDeserializer;
-import org.apache.kafka.common.serialization.StringSerializer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.lang.reflect.Constructor;
 import java.time.Duration;
 import java.util.Arrays;
 import java.util.Properties;
 import java.util.concurrent.CountDownLatch;
 
-public class TraditionalConsumer {
+public class ThreadedConsumer {
     public static void main(String[] args) {
-       Logger logger = LoggerFactory.getLogger(TraditionalConsumer.class.getName());
+       Logger logger = LoggerFactory.getLogger(ThreadedConsumer.class.getName());
         String bootstrapProperties = "127.0.0.1:9092";
         String group_id = "consumer-group-01-007";
         String topic = "testt_topic2";
@@ -41,23 +37,6 @@ public class TraditionalConsumer {
             {
                 logger.info("Key: "+ record.key() +"Value: "+record.value());
                 logger.info("Partition: "+ record.partition() +"Offset: "+record.offset());
-            }
-        }
-
-        public class ConsumerThread implements Runnable {
-            private CountDownLatch latch;
-            public ConsumerThread(CountDownLatch latch)
-            {
-                this.latch = latch;
-            }
-            @Override
-            public void run()
-            {
-
-            }
-            public void shutdown()
-            {
-
             }
         }
 
